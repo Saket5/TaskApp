@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar"
+        android:layout_gravity="top">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/addtaskToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="UserName"
+            style="@style/Theme.TaskApp"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:navigationIconTint="@color/SecondaryColor"
+            app:titleMarginStart="@dimen/largeMargin" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+       >
+
+
+        <TextView
+            android:id="@+id/addtaskView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mediumMargin"
+            android:text="TASKS"
+            android:textAlignment="center"
+            android:textColor="@color/PrimaryColor"
+            android:textSize="@dimen/extraLargeText"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:id="@+id/addTaskLinear"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addtaskView"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addTaskInputText"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mediumMargin"
+                android:layout_marginEnd="@dimen/mediumMargin"
+                app:hintTextColor="@color/iconTint"
+                app:boxStrokeColor="@color/iconTint"
+                app:boxStrokeErrorColor="@color/errorTint"
+                app:startIconDrawable="@drawable/pen_icon"
+                app:startIconTint="@color/iconTint"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/iconTint"
+                app:errorIconTint="@color/errorTint"
+                app:errorTextColor="@color/errorTint"
+
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/addTaskEdit"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/addTaskSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/mediumMargin"
+                android:background="@drawable/rectangle_buttons"
+                android:text="Save"
+                android:textSize="@dimen/mediumText" />
+
+
+        </LinearLayout>
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addTaskLinear"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/task_item">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

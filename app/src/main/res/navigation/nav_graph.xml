@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/createFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.saket.taskapp.ui.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.saket.taskapp.ui.fragments.CreateFragment"
+        android:label="CreateFragment" >
+        <action
+            android:id="@+id/action_createFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_createFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.saket.taskapp.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_userTaskFragment"
+            app:destination="@id/userTaskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createFragment"
+            app:destination="@id/createFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTaskFragment"
+        android:name="com.saket.taskapp.ui.fragments.UserTaskFragment"
+        android:label="fragment_user_task"
+        tools:layout="@layout/fragment_user_task" >
+        <argument
+            android:name="clicked_user"
+            app:argType="com.saket.taskapp.model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.saket.taskapp.ui.fragments.AddTaskFragment"
+        android:label="AddTaskFragment" />
+</navigation>

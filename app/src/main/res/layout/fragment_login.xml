@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.LoginFragment"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mediumMargin"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="TaskApp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/largeMargin"
+            android:layout_marginStart="@dimen/largeMargin"
+            android:layout_marginTop="@dimen/mediumMargin"
+            android:background="@drawable/rectangle_buttons"
+            android:text="@string/login"
+            android:textColor="@color/alternativeText"
+            android:textSize="@dimen/mediumText"
+            android:transitionName="create_account_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginScreenPasswordTextInput" />
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/largeMargin"
+            android:layout_marginTop="@dimen/mediumMargin"
+            android:layout_marginEnd="@dimen/largeMargin"
+            android:background="@drawable/rectangle_buttons"
+
+            android:text="Create Account"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/mediumText"
+            android:transitionName="login_transition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+        <ProgressBar
+            android:id="@+id/loginScreenProgressBar"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/progress_bar_background"
+            android:elevation="16dp"
+            android:padding="@dimen/mediumPadding"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginScreenEmailTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/largeMargin"
+            android:layout_marginStart="@dimen/largeMargin"
+            android:transitionName="email_transition"
+            app:hintTextColor="@color/iconTint"
+            app:boxStrokeColor="@color/iconTint"
+            app:boxStrokeWidthFocused="@dimen/createAccountScreenBoxStrokeWidthFocused"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/iconTint"
+            app:errorIconTint="@color/errorTint"
+            app:errorTextColor="@color/errorTint"
+            app:boxStrokeErrorColor="@color/errorTint"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            app:startIconDrawable="@drawable/email_icon"
+            app:startIconTint="@color/iconTint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/create_account_screen_email"
+                android:inputType="textEmailAddress"
+                android:transitionName="email_transition" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginScreenPasswordTextInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/largeMargin"
+            android:layout_marginStart="@dimen/largeMargin"
+            android:transitionName="password_transition"
+            app:hintTextColor="@color/iconTint"
+            app:boxStrokeColor="@color/iconTint"
+            app:boxStrokeWidthFocused="@dimen/createAccountScreenBoxStrokeWidthFocused"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/iconTint"
+            app:errorIconTint="@color/errorTint"
+            app:errorTextColor="@color/errorTint"
+            app:boxStrokeErrorColor="@color/errorTint"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginScreenEmailTextInput"
+            app:startIconDrawable="@drawable/password_icon"
+            app:startIconTint="@color/iconTint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login_screen_password"
+                android:inputType="textPassword"
+                android:transitionName="password_transition" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

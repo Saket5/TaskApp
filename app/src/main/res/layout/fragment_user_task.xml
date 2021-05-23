@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar"
+        android:layout_gravity="top">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/taskToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="UserName"
+            style="@style/Theme.TaskApp"
+            app:navigationIcon="@drawable/ic_toolbar_back"
+            app:navigationIconTint="@color/SecondaryColor"
+            app:titleMarginStart="@dimen/largeMargin" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/taskcardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/PrimaryColor"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userTaskName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/mediumText"
+                        android:textAlignment="center"
+                        android:padding="@dimen/mediumPadding" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/mediumPadding">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                             android:layout_marginStart="@dimen/mediumMargin"
+                            android:textColor="@color/white"
+                            android:text="Age :"
+                            android:textSize="@dimen/mediumText"
+                            />
+                        <TextView
+                            android:id="@+id/userAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:layout_marginStart="@dimen/mediumMargin"
+                            android:textSize="@dimen/mediumText"
+                            android:layout_marginEnd="@dimen/mediumMargin"/>
+                        <TextView
+                            android:id="@+id/userDOBText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/white"
+                            android:layout_marginStart="@dimen/mediumMargin"
+                            android:text="D.O.B :"
+                            android:textSize="@dimen/mediumText"
+                            />
+                        <TextView
+                            android:id="@+id/userDob"
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/mediumText"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/smallMargin"/>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/userEmail"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/mediumText"
+                        android:padding="@dimen/mediumPadding"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/white"
+                        android:layout_height="match_parent"/>
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/taskView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/mediumMargin"
+                android:textAlignment="center"
+                android:textSize="@dimen/extraLargeText"
+                android:text="TASKS"
+                android:textColor="@color/PrimaryColor"
+                app:layout_constraintTop_toBottomOf="@+id/taskcardView"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskView"
+                tools:listitem="@layout/task_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

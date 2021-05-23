@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TaskApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="taskapp">TaskApplication</string>
+    <string name="loginName">Name :</string>
+    <string name="loginDob">Date of Birth:</string>
+    <string name="loginAge">Age :</string>
+    <string name="create_account_screen_confirm_password">\"Confirm Password\"</string>
+    <string name="login_screen_password">Password</string>
+    <string name="create_account_screen_email">Email</string>
+    <string name="create_account_screen_full_name">Name</string>
+    <string name="login">Log In</string>
+    <string name="date_of_birth">dd/mm/yyyy</string>
+</resources>
